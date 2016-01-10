@@ -1,0 +1,23 @@
+{
+  "name": "react-with-requirejs",
+  "version": "1.0.0",
+  "description": "React single page application with RequireJS and Hasher/CrossRoads",
+  "main": "app/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "React",
+    "RequireJS",
+    "Hasher",
+    "CrossRoads"
+  ],
+  "author": "phaman86",
+  "license": "MIT",
+  "dependencies": {
+    "crossroads": "^0.12.2"
+  },
+  "devDependencies": {
+    "babel-preset-react": "^6.3.13"
+  }
+}

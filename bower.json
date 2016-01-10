@@ -1,0 +1,12 @@
+{
+  "name": "react-with-requirejs",
+  "description": "React single page application with RequireJS and hasher",
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "react": "~0.14.6",
+    "requirejs": "~2.1.22",
+    "hasher": "~1.2.0",
+    "jquery": "~2.2.0",
+    "js-signals": "~1.0.0"
+  }
+}
