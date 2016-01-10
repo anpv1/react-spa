@@ -1,5 +1,5 @@
 {
-  "name": "react-with-requirejs",
+  "name": "react-spa",
   "description": "React single page application with RequireJS and hasher",
   "dependencies": {
     "bootstrap": "~3.3.6",
