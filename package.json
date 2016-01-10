@@ -1,5 +1,5 @@
 {
-  "name": "react-with-requirejs",
+  "name": "react-spa",
   "version": "1.0.0",
   "description": "React single page application with RequireJS and Hasher/CrossRoads",
   "main": "app/app.js",
