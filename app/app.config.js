@@ -6,6 +6,11 @@ define([], function(){
 				views: {
 					'defaultView': 'main-view'
 				}
+			},
+			'todos': {
+				views: {
+					'todoView': 'main-view'
+				}
 			}
 		}
 	}

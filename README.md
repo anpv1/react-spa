@@ -12,6 +12,8 @@ Try http://localhost/index.html#/default
 or http://localhost/index.html#/default?name=Your Name,  
 it should show "Hello, World!" or "Hello, Your Name"
 
+Try http://localhost/index.html#/todos, it should show todos application
+
 #### Developer usage
 
 Edit app/app.config.js for the routing system
