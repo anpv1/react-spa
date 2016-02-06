@@ -1,18 +1,12 @@
-define(['react', 'react-dom'], function(React, ReactDOM){
+define(['react', 'react-dom', 'lodash'], function(React, ReactDOM, _){
 
 	var Todo = React.createClass({
-		getInitialState: function(){
-			return {done: this.props.data.done};
-		},
-		toggleDone: function(event){
-			this.setState({done: !this.state.done});
-		},
 		render: function(){
-			var done = this.state.done;
+			var done = this.props.data.done;
 			return (
 				<div class="checkbox">
 					<label>
-						<input onChange={this.toggleDone} type="checkbox" checked={done} /> <span className={done ? 'done': 'notdone'}>{this.props.data.title}</span>
+						<input onChange={this.props.onTodoToggle} type="checkbox" checked={done} /> <span className={done ? 'done': 'notdone'}>{this.props.data.title}</span>
 					</label>
 				</div>
 			);
@@ -21,9 +15,11 @@ define(['react', 'react-dom'], function(React, ReactDOM){
 
 	var TodoList = React.createClass({
 		render: function(){
+			var self = this;
 			var TodoItems = this.props.data.map(function(item, index){
+				var toggleFunction = self.props.onTodoToggle.bind(this, index);
 				return (
-					<Todo key={index} data={item} />
+					<Todo onTodoToggle={toggleFunction} key={index} data={item} />
 				);
 			});
 			return (
@@ -61,6 +57,11 @@ define(['react', 'react-dom'], function(React, ReactDOM){
 		getInitialState: function(){
 			return {todos: []}
 		},
+		onTodoToggle: function(index){
+			var todos = this.state.todos;
+			todos[index].done = !todos[index].done;
+			this.setState({todos: todos});
+		},
 		onTodoAdd: function(item){
 			var todos = this.state.todos;
 			todos.push({title: item, done: false});
@@ -68,12 +69,19 @@ define(['react', 'react-dom'], function(React, ReactDOM){
 		},
 		render: function() {
 			var data = this.state.todos;
+			var remaining = _.reduce(data, function(sum, item){
+				if(item.done == false){
+					return ++sum;
+				} else {
+					return sum;
+				}
+			}, 0);
 			return (
 				<div>
 					<h3>Todo List</h3>
 					<TodoForm onTodoAdd={this.onTodoAdd} />
-					<TodoList data={data} />
-					<div>Number of items: {data.length}</div>
+					<TodoList onTodoToggle={this.onTodoToggle} data={data} />
+					<div>Number of remaining items: {remaining}</div>
 				</div>
 			);
 		}

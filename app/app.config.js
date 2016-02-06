@@ -11,6 +11,11 @@ define([], function(){
 				views: {
 					'todoView': 'main-view'
 				}
+			},
+			'table': {
+				views: {
+					'tableView': 'main-view'
+				}
 			}
 		}
 	}

@@ -7,6 +7,7 @@
     "requirejs": "~2.1.22",
     "hasher": "~1.2.0",
     "jquery": "~2.2.0",
-    "js-signals": "~1.0.0"
+    "js-signals": "~1.0.0",
+    "lodash": "^4.2.0"
   }
 }
